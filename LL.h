@@ -2,35 +2,35 @@
 #define LL_H
 #include <iostream>
 
-class LinkedList {
-    private:
-    struct Node {
-        int data;
-        Node* next;
+class LinkedList
+{
+private:
+    struct Node
+    {
+        int index;
+        Node *next;
+        std::string data = " ";
     };
-    Node* head;
+    Node *head;
     int count;
+
 public:
     LinkedList();
     ~LinkedList();
-    void insert(int data);
-    void remove(int data);
+    void insert(std::string data);
+    void remove(std::string data);
     void display();
-    void reverse();
-    void sort();
     void clear();
-    int size();
     bool isEmpty();
-    bool contains(int data);
+    bool contains(std::string data);
+    int amountOfNodes();
     int get(int index);
-    int indexOf(int data);
-    int lastIndexOf(int data);
-    void set(int index, int data);
-    void add(int index, int data);
+    int indexOf(std::string data);
+    void set(int index, std::string data);
+    void add(int index, std::string data);
     void removeAt(int index);
     void removeRange(int start, int end);
     void removeDuplicates();
 };
-
 
 #endif // LL_H
